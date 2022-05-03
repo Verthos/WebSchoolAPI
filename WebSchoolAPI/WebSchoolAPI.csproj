@@ -22,4 +22,8 @@
     <ProjectReference Include="..\DataAcess\DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Scripts\ProjectStoredProcedures\" />
+  </ItemGroup>
+
 </Project>

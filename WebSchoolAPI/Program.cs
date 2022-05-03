@@ -1,5 +1,4 @@
-
-using DataAccess.DbAccess;
+using DataAccess.Repository.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +8,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>(); //addscoped?
+builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+
+
 
 var app = builder.Build();
 
